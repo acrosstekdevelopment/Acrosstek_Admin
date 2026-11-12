@@ -1,8 +1,5 @@
-/* ================= ROOT ================= */
-
 .container {
   width: 100%;
-  // padding: 1.5rem;
   background: #f6f6f6;
   min-height: 100vh;
 
@@ -15,22 +12,15 @@
 }
 
 .contentWrapper {
-  // max-width: 1200px;       // 🔥 page width reduced
   margin: 0 auto;
   background: #fff;
-  // border-radius: 1;
   padding: 1.25rem 1.5rem 1rem;
-  // border: solid red ;
-
-  
 }
-
-/* ================= TABS ================= */
 
 .tabs {
   display: flex;
   gap: 0.75rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.8rem;
   flex-wrap: wrap;
 
   button {
@@ -64,17 +54,76 @@
   }
 }
 
-/* ================= GRID ================= */
+.selectBar {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.5rem 0;
+  margin-bottom: 0.8rem;
+  border-bottom: 1px solid #f0f0f0;
+  flex-wrap: wrap;
+}
+
+.selectAll {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  font-size: 0.83rem;
+  color: #555;
+  user-select: none;
+
+  input[type="checkbox"] {
+    accent-color: #ff6b35;
+    width: 0.95rem;
+    height: 0.95rem;
+    cursor: pointer;
+  }
+}
+
+.selectedCount {
+  font-size: 0.82rem;
+  color: #888;
+}
+
+.bulkDeleteBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.9rem;
+  background: #666;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background 0.2s;
+
+  &:hover { background: #4d4d4d; }
+}
+
+.clearBtn {
+  padding: 0.35rem 0.6rem;
+  background: #f0f0f0;
+  color: #666;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background 0.2s;
+
+  &:hover { background: #e0e0e0; }
+}
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);   // 🔥 3 cards per row
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
   margin-bottom: 1rem;
-  max-height: calc(100vh - 190px);
+  max-height: calc(100vh - 220px);
   overflow-y: auto;
   padding-right: 0.4rem;
-  // border: solid red ;
+
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -83,41 +132,51 @@
     grid-template-columns: 1fr;
   }
 
-  &::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 3px;
-  }
+  &::-webkit-scrollbar { width: 6px; }
+  &::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
 }
-
-/* ================= CARD ================= */
 
 .card {
   border: 1px solid #e3e3e3;
-  // border-radius: 10px;
   background: #fff;
   display: flex;
   flex-direction: column;
-  min-height: 240px;      // 🔥 equal height
+  min-height: 240px;
   transition: box-shadow 0.2s, transform 0.2s;
 
   &:hover {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
     transform: translateY(-2px);
   }
+
+  &.cardSelected {
+    border-color: #ff6b35;
+    background: #fff8f5;
+  }
 }
 
 .cardTop {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0.65rem 1rem;
   background: #fafafa;
   border-bottom: 1px solid #eee;
   font-size: 0.75rem;
   color: #777;
+}
+
+.cardTopLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  input[type="checkbox"] {
+    accent-color: #ff6b35;
+    width: 0.95rem;
+    height: 0.95rem;
+    cursor: pointer;
+  }
 }
 
 .cardBody {
@@ -135,8 +194,6 @@
     }
   }
 }
-
-/* ================= ACTIONS ================= */
 
 .cardActions {
   display: flex;
@@ -158,28 +215,18 @@
     transition: all 0.2s;
   }
 
-  /* View */
   button:first-child {
-    background: #ff6b35;      // 🔥 orange
+    background: #ff6b35;
     color: #fff;
-
-    &:hover {
-      background: #e85c28;
-    }
+    &:hover { background: #e85c28; }
   }
 
-  /* Delete */
   button:last-child {
-    background: #666;        // 🔥 gray
+    background: #666;
     color: #fff;
-
-    &:hover {
-      background: #4d4d4d;
-    }
+    &:hover { background: #4d4d4d; }
   }
 }
-
-/* ================= LOADING / EMPTY ================= */
 
 .loadingWrap {
   display: flex;
@@ -194,14 +241,12 @@
   font-size: 0.9rem;
 }
 
-/* ================= FOOTER (PAGINATION) ================= */
-
 .pagination {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 0.8rem;
-  padding: 0.5rem 0;        // 🔥 reduced footer height
+  padding: 0.5rem 0;
   margin-top: 0.5rem;
 
   button {
@@ -210,48 +255,38 @@
     background: #fff;
     border-radius: 6px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 0.83rem;
+    color: #555;
+    transition: all 0.2s;
 
     &:hover:not(:disabled) {
       border-color: #ff6b35;
+      color: #ff6b35;
     }
 
     &:disabled {
       opacity: 0.3;
       cursor: not-allowed;
     }
+  }
 
-    img {
-      width: 1rem;
-      height: 1rem;
-    }
+  .pageInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
   }
 
   span {
     font-size: 0.8rem;
     color: #666;
   }
-}
 
-/* ================= STATS ================= */
-
-.stats {
-  display: flex;
-  gap: 1rem;
-  padding: 0;
-  background: none;
-  border-radius: 0;
-  margin: 0;
-  font-size: 0.8rem;
-
-  span {
-    color: #888;
+  .totalCount {
+    font-size: 0.75rem;
+    color: #aaa;
   }
 }
-
-/* ================= MODAL ================= */
 
 .modalOverlay {
   position: fixed;
@@ -294,10 +329,7 @@
     font-size: 1.6rem;
     color: #777;
     cursor: pointer;
-
-    &:hover {
-      color: #ff6b35;
-    }
+    &:hover { color: #ff6b35; }
   }
 }
 
@@ -311,9 +343,7 @@
     font-size: 0.9rem;
     color: #333;
 
-    &:last-child {
-      border-bottom: none;
-    }
+    &:last-child { border-bottom: none; }
 
     strong {
       color: #666;

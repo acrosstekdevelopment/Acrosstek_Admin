@@ -23,3 +23,5 @@ dist.zip
 *.njsproj
 *.sln
 *.sw?
+
+*.zip

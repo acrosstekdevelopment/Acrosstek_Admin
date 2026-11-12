@@ -31,6 +31,7 @@ import JobQuery from "./pages/JobPosting/JobQuery";
 import EditBlog2 from "./pages/BlogsNext/EditBlog2";
 import InquiriesManager from "./pages/Contact-us-nextjs/InquiriesManager";
 import Form from "./pages/Form/Form";
+import Trash from "./pages/Trash/Trash";
 
 function App() {
 	clearCacheData();
@@ -90,6 +91,7 @@ function App() {
 						<Route exact path="/job/edit/:id" element={<JobAdd/>} />
 						<Route exact path="/jobs-application" element={<JobQuery/>} />
 
+						<Route exact path="/trash" element={<Trash/>} />
 						<Route exact path="/popup-form" element={<Form/>} />
 					</Route>
 				</Routes>

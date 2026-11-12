@@ -10,6 +10,7 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Logo from "../../assets/images/AcrosstekLogo.png";
 import { fetchLanguageFromLocal, removeUser, setLanguage } from "../../redux/slice/authSlice";
 import styles from "./DashboardWrapper.module.scss";
+import { Trash } from "lucide-react";
 
 const DashboardWrapper = () => {
 	const navigate = useNavigate();
@@ -122,6 +123,12 @@ const DashboardWrapper = () => {
 						<MdOutlineSupportAgent />
 						<p>Query</p>
 					</div>
+
+					<div className={`${styles.items} ${pathname === "/trash" ? styles.activeItem : ""}`} onClick={() => navigate("/trash")}>
+						<Trash/>
+						<p>Trash</p>
+					</div>
+
 
 					<div
 						className={styles.items}
