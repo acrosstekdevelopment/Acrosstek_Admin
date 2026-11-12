@@ -1,8 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
+import ls from "localstorage-slim";
 
 const initialState = {
 	user: null,
 	token: "",
+	language: "English",
 };
 
 const authSlice = createSlice({
@@ -30,10 +32,23 @@ const authSlice = createSlice({
 			sessionStorage.removeItem("krosshire_token");
 			state.user = null;
 			state.token = "";
+			ls.remove("allTagsAdmin");
+		},
+
+		setLanguage: (state, { payload }) => {
+			state.language = payload;
+			ls.set("language", payload);
+		},
+		fetchLanguageFromLocal: (state) => {
+			const storedLanguage = ls.get("language");
+			state.language = storedLanguage || "English";
+			if (!storedLanguage) {
+				ls.set("language", "English");
+			}
 		},
 	},
 });
 
-export const { fetchFromStorage, setUser, removeUser } = authSlice.actions;
+export const { fetchFromStorage, setUser, removeUser, setLanguage, fetchLanguageFromLocal } = authSlice.actions;
 
 export default authSlice.reducer;

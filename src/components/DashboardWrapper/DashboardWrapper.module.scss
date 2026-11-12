@@ -13,9 +13,9 @@
 		display: flex;
 		flex-direction: column;
 		overflow: hidden;
-
+		
 		.Logo {
-			width: 100%;
+			width: 90%;
 			flex-shrink: 0;
 			margin-bottom: 1rem;
 			cursor: pointer;
@@ -31,7 +31,7 @@
 			flex: 1;
 			overflow: hidden;
 			overflow-y: scroll;
-
+            scrollbar-width: none;
 			.items {
 				width: 100%;
 				height: 3.5rem;
@@ -142,7 +142,7 @@
 					justify-content: flex-end;
 					align-items: center;
 					width: 8rem;
-					height: 2rem;
+					height: 2.3rem;
 					border-radius: 0.3rem;
 					background: transparent;
 					outline: none;

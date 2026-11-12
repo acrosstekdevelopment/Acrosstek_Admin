@@ -1,37 +1,14 @@
 import React from "react";
 import styles from "./Dashboard.module.scss";
-
-const items = [
-	{
-		id: 1,
-		count: 42,
-		itemName: "Dummy",
-		imgUrl: "https://picsum.photos/500/500",
-	},
-	{
-		id: 2,
-		count: 12,
-		itemName: "Recent Queries",
-		imgUrl: "https://picsum.photos/500/500",
-	},
-	{
-		id: 3,
-		count: 42,
-		itemName: "Recent Admission Applications",
-		imgUrl: "https://picsum.photos/500/500",
-	},
-	{
-		id: 4,
-		count: 42,
-		itemName: "Dummy",
-		imgUrl: "https://picsum.photos/500/500",
-	},
-];
+import Row1 from "./Row1";
+import Row2 from "./Row2";
 
 const Dashboard = () => {
 	return (
 		<div className={styles.Dashboard}>
-			{items && items.map((item, i) => <UpperCards key={i} {...item} />)}
+			{/* <div className={styles.UpperSection}>{items && items.map((item, i) => <UpperCards key={i} {...item} />)}</div> */}
+			<Row1 />
+			<Row2 />
 		</div>
 	);
 };
@@ -52,7 +29,9 @@ const UpperCards = ({ id, count, itemName, imgUrl }) => {
 				</div>
 			</div>
 
-			<div className={styles.line}><hr /></div>
+			<div className={styles.line}>
+				<hr />
+			</div>
 
 			<div className={styles.lowerSection}>
 				<p>Last Updated at {"15 minutes ago"} </p>

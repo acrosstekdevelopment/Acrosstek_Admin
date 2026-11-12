@@ -1,0 +1,184 @@
+.container {
+  padding: 2rem;
+  min-height: 100vh;
+  background: rgba(255, 255, 255, 0.95);
+  color: #111;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+/* Header */
+.job {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+
+  .title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #111;
+  }
+}
+
+/* Search & filter */
+.filterBar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+
+  input {
+    flex: 2;
+    padding: 0.7rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    color: #111;
+  }
+
+  select {
+    // min-width: 180px;
+    width: 14rem !important;
+    padding: 0.7rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    color: #111;
+  }
+}
+
+/* Grid */
+.jobGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.2rem;
+}
+
+/* Card */
+.jobCard {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.2rem;
+
+  .title2 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.6rem;
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #111;
+    }
+
+    span {
+      font-size: 0.75rem;
+      color: #ff6b00;
+    }
+  }
+
+  .company,
+  .location {
+    font-size: 0.9rem;
+    color: #111;
+    margin: 0.3rem 0;
+
+    strong {
+      color: #ff6b00;
+    }
+  }
+
+  .actions {
+    margin-top: 1rem;
+    text-align: right;
+  }
+}
+
+/* Buttons */
+.viewBtn {
+  background: #ff6b00;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.deleteBtn {
+  width: 100%;
+  margin-top: 1rem;
+  background: transparent;
+  border: 1px solid #ff6b00;
+  color: #ff6b00;
+  padding: 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.close {
+  width: 100%;
+  margin-top: 0.6rem;
+  background: #f3f3f3;
+  border: 1px solid #ccc;
+  padding: 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Modal */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 85vh;
+  overflow-y: auto;
+
+  h2 {
+    margin-bottom: 0.3rem;
+  }
+
+  .modalJob {
+    color: #ff6b00;
+    margin-bottom: 1.2rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.6rem;
+  }
+
+  .modalGrid {
+    display: grid;
+    gap: 0.8rem;
+
+    p {
+      font-size: 0.9rem;
+      color: #111;
+
+      strong {
+        display: block;
+        font-size: 0.8rem;
+        color: #ff6b00;
+      }
+    }
+
+    a {
+      color: #ff6b00;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+  }
+}
+
+/* States */
+.centerText {
+  text-align: center;
+  padding: 3rem;
+  color: #555;
+}

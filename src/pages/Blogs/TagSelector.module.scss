@@ -1,0 +1,75 @@
+.container {
+	width: 100%;
+	margin: auto;
+}
+
+.tagInputContainer {
+	display: flex;
+	flex-direction: column;
+	margin-right: auto;
+}
+
+.tags {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 1rem 0;
+	gap: 0.5rem;
+}
+
+.tag {
+	background-color: var(--c1h2);
+	border-radius: 1.2rem;
+	padding: 0.5rem 1rem;
+
+	display: flex;
+	align-items: center;
+}
+
+.removeTag {
+	background: none;
+	border: none;
+	margin-left: 8px;
+	cursor: pointer;
+}
+
+.inputField {
+	width: 100%;
+	padding: 0.6rem 1rem;
+	font-size: 1.2rem;
+	border: 1px solid var(--c10);
+	border-radius: 4px;
+	margin-bottom: 10px;
+}
+
+.InputWrapper {
+	width: 25rem;
+	position: relative;
+	z-index: 100;
+}
+
+.suggestions {
+	width: 100%;
+	background-color: var(--c2);
+	position: absolute;
+	top: 4rem;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	border: 1px solid var(--c11);
+	max-height: 15rem;
+	overflow-y: auto;
+}
+
+.suggestions li {
+	padding: 10px;
+	cursor: pointer;
+}
+
+.suggestions li:hover {
+	background-color: var(--c12);
+}
+
+.noOptions {
+	padding: 1rem;
+	color: var(--c13);
+}

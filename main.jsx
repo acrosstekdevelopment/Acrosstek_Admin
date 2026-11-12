@@ -6,9 +6,9 @@ import "./src/assets/scss/index.scss";
 import store from "./src/redux/store";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-	<React.StrictMode>
+	// <React.StrictMode>
 		<Provider store={store}>
 			<App />
 		</Provider>
-	</React.StrictMode>
+
 );

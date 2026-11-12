@@ -1,0 +1,67 @@
+.AddAuthorPopup {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.51);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+
+	.Wrapper {
+		height: auto;
+		width: auto;
+		background: var(--c4);
+		padding: 4rem 6rem;
+		border-radius: 1rem;
+		overflow-y: scroll;
+		backdrop-filter: blur(5px);
+
+		.AuthSectionLeft {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 2rem;
+
+			img {
+				height: 6rem;
+				width: 6rem;
+				border-radius: 50%;
+				cursor: pointer;
+			}
+
+			input {
+				width: 30rem;
+				height: 2.5rem;
+				padding: 0 2rem;
+				outline: none;
+				border: none;
+				font-size: 1.5rem;
+				color: var(--c2);
+				border-bottom: 2px solid var(--c1);
+				background: transparent;
+			}
+
+			button {
+				cursor: pointer;
+				padding: 0.7rem 1.4rem;
+				background-color: var(--c1);
+				color: #fff;
+				border: none;
+				border-radius: 0.2vw;
+				transition: all ease 0.3s;
+				font-family: var(--f1);
+
+				&:hover {
+					background-color: var(--c1v2);
+					color: var(--c1v2);
+					transform: scale(1.1);
+					color: var(--c3);
+				}
+			}
+		}
+	}
+}

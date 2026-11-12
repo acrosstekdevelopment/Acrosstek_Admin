@@ -148,6 +148,9 @@
 			.Date {
 				flex: 1;
 			}
+			.Actions {
+				flex: 0.5;
+			}
 		}
 
 		.supportCards {
@@ -265,5 +268,18 @@
 	}
 	.Date {
 		flex: 1;
+	}
+	.Actions {
+		flex: 0.5;
+
+		p {
+			cursor: pointer;
+			font-size: 1.5rem;
+			transition: all 0.3s ease-in-out;
+
+			&:hover {
+				color: var(--c1);
+			}
+		}
 	}
 }

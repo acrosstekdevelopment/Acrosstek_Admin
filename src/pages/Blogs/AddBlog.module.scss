@@ -10,12 +10,30 @@
 		padding: 2vh 0;
 		align-self: start;
 		margin-left: 2.3vw;
-		color: #191b1c;
+		color: var(--c5);
 		font-family: var(--f1);
 		font-size: 1.25vw;
 		font-style: normal;
 		font-weight: 600;
-		line-height: 2.13vh; /* 95.833% */
+		line-height: 120%; /* 95.833% */
+	}
+
+	.Top {
+		width: 90%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		p {
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			gap: 0.3rem;
+			font-size: 1.5rem;
+			color: var(--c3);
+			font-family: var(--f1);
+			font-weight: 400;
+		}
 	}
 
 	.WrapperContainer {
@@ -42,7 +60,6 @@
 
 				textarea {
 					width: 100%;
-					height: 100%;
 					resize: none;
 					font-size: 2rem;
 					color: var(--c2);
@@ -50,9 +67,13 @@
 					background: transparent;
 					outline: none;
 
+					&.MainTitle{
+						height: 12rem;
+					}
+
 					&.smallText {
 						font-size: 1rem;
-						height: 5rem;
+						flex: 1;
 					}
 
 					&::placeholder {
@@ -81,6 +102,7 @@
 			.Right {
 				position: relative;
 				display: flex;
+
 				align-items: center;
 				justify-content: center;
 
@@ -125,6 +147,98 @@
 			}
 		}
 
+		.TagAuthor {
+			display: flex;
+			align-items: center;
+			gap: 2rem;
+
+			.TagWrapper {
+				height: auto;
+				width: 50%;
+				padding: 2rem;
+
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 1rem;
+
+				h1 {
+					margin: 0;
+				}
+
+				.rti--container {
+					border: 10px solid red;
+				}
+				#tag-input {
+					border: 10px solid rgb(30, 231, 97);
+				}
+				textarea {
+					border: 1px solid red;
+				}
+			}
+
+			.AuthSectionRight {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 1rem;
+
+				h3 {
+					font-size: 1.8rem;
+				}
+
+				select {
+					width: 60%;
+					height: 2.5rem;
+					padding: 0 2rem;
+					outline: none;
+					border: none;
+					border-bottom: 2px solid var(--c1);
+					background: transparent;
+
+					&::placeholder {
+						color: rgba(0, 0, 0, 0.7);
+					}
+
+					option {
+						color: var(--c2);
+						background: var(--c1);
+					}
+				}
+			}
+		}
+
+		.DateTime {
+			width: 100%;
+			padding: 1rem 2rem;
+			display: flex;
+			flex-direction: column;
+			// align-items: center;
+			gap: 1rem;
+			background-color: var(--c1);
+
+			h3 {
+				color: var(--c2);
+			}
+
+			label,
+			input {
+				color: var(--c2);
+				font-family: var(--f3);
+			}
+			input {
+				background-color: transparent;
+				border: none;
+				border-bottom: 1px solid var(--c2);
+				margin-left: 0.3rem;
+			}
+			.Label1 {
+				margin-left: 3rem;
+			}
+		}
+
 		.ContentWrapper {
 			width: 100%;
 			margin-bottom: 2rem;
@@ -132,14 +246,26 @@
 			.HeaderSection {
 				display: flex;
 				padding: 1rem 2rem;
+				flex-direction: column;
 				align-items: center;
-				justify-content: space-evenly;
+				gap: 1rem;
 				gap: 2rem;
 				margin-bottom: 1rem;
 				background: var(--c4);
-				z-index: 5;
 				position: sticky;
 				top: 0;
+				z-index: 10;
+
+				h2 {
+					color: #fff;
+				}
+
+				.Buttons {
+					width: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: space-evenly;
+				}
 
 				button {
 					width: 15rem;
@@ -164,8 +290,66 @@
 			}
 
 			.BodySection {
+				width: 100%;
 				min-height: 10vh;
 				padding: 0 2rem;
+				display: flex;
+				flex-direction: row-reverse;
+				gap: 2rem;
+
+				.LeftBoxes {
+					flex: 1;
+				}
+				.RightIdCon {
+					width: 20rem;
+					min-height: 15rem;
+					height: auto;
+					max-height: 43rem;
+					position: sticky;
+					top: 10rem;
+					padding: 1rem;
+					display: flex;
+					flex-direction: column;
+					gap: 0.5rem;
+					box-shadow: 0px 7px 9px -2px rgba(0, 0, 0, 0.7);
+
+					h3 {
+						font-size: 2rem;
+						color: var(--c1);
+						font-family: var(--f1);
+						font-weight: 400;
+					}
+
+					.TitleIds {
+						flex: 1;
+						overflow-y: scroll;
+						display: flex;
+						flex-direction: column;
+						gap: 0.3rem;
+						&::-webkit-scrollbar {
+							display: none;
+						}
+
+						.TitleIdCard {
+							background-color: var(--c1);
+							box-shadow: 0px 6px 6px -6px rgba(0, 0, 0, 0.7);
+							display: flex;
+							flex-direction: column;
+							border-radius: 0.3rem;
+							padding: 0.3rem 0.6rem;
+
+							p {
+								font-size: 1.5rem;
+								color: var(--c2);
+								font-family: var(--f1);
+								font-weight: 400;
+								&:nth-child(2) {
+									color: var(--c6);
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 
@@ -244,14 +428,16 @@
 			}
 		}
 
-		.Submit {
+		.Submit,
+		.ButtonWrapper {
 			width: 100%;
 			display: flex;
 			align-items: center;
-			justify-content: center;
+			justify-content: flex-end;
+			padding-right: 4rem;
 
 			button {
-				width: 80%;
+				width: 70%;
 				height: 3.5rem;
 				background: var(--c1);
 				transition: all 0.3s ease-in-out;
@@ -274,6 +460,50 @@
 .TextBox {
 	margin-bottom: 2rem;
 	border-bottom: 2px solid var(--c1);
+	position: relative;
+
+	.Remove {
+		position: absolute;
+		top: 0.2rem;
+		right: 2rem;
+		z-index: 5;
+		background-color: var(--b4);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 3px;
+		border-radius: 0.4rem;
+		cursor: pointer;
+		transition: all ease-in-out 0.3s;
+
+		&:hover {
+			opacity: 0.9;
+			scale: 0.9;
+		}
+	}
+
+	.AddTag {
+		position: absolute;
+		top: 1rem;
+		right: 6rem;
+		z-index: 5;
+		background-color: var(--b4);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 3px;
+		border-radius: 0.4rem;
+		cursor: pointer;
+		transition: all ease-in-out 0.3s;
+
+		color: var(--c2);
+
+		&:hover {
+			opacity: 0.9;
+			scale: 0.9;
+		}
+	}
+	/* In AddBlog.module.scss or TextBox.scss */
 }
 
 .ImageBox {
@@ -281,6 +511,51 @@
 	padding-bottom: 2rem;
 	margin-bottom: 2rem;
 	border-bottom: 2px solid var(--c1);
+	position: relative;
+
+	.Remove {
+		position: absolute;
+		top: 2rem;
+		right: 3rem;
+		z-index: 5;
+		background-color: var(--b4);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 3px;
+		border-radius: 0.4rem;
+		cursor: pointer;
+		transition: all ease-in-out 0.3s;
+
+		&:hover {
+			opacity: 0.9;
+			scale: 0.9;
+		}
+	}
+
+	.UploadImage {
+		position: absolute;
+		top: 2rem;
+		right: 8rem;
+		z-index: 5;
+		cursor: pointer;
+		width: max-content;
+		padding: 1rem;
+		height: 3rem;
+		border-radius: 0.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--b4);
+		color: var(--c2);
+		font-size: 1.4rem;
+		border: none;
+		transition: all 0.3s ease-in-out;
+		&:hover {
+			opacity: 0.9;
+			scale: 0.9;
+		}
+	}
 
 	.Image {
 		width: 100%;
@@ -294,12 +569,7 @@
 			width: 100%;
 			height: 100%;
 		}
-
 		button {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
 			cursor: pointer;
 			width: 18rem;
 			height: 3rem;
@@ -312,6 +582,10 @@
 			font-size: 1.4rem;
 			border: none;
 			transition: all 0.3s ease-in-out;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
 
 			&:hover {
 				transform: translate(-50%, -50%) scale(1.1);
@@ -340,3 +614,17 @@
 		}
 	}
 }
+.custom-tag {
+	text-decoration: underline; /* Underline the text */
+	background-color: #f0f8ff; /* Light blue background */
+	padding: 2px 4px; /* Padding around the text */
+	border-radius: 3px; /* Rounded corners */
+}
+
+// span {
+// 	background-color: rgba(255, 0, 0, 0.205);
+// }
+
+// .ql-formats {
+// 	background-color: yellow;
+// }

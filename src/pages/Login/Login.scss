@@ -2,247 +2,457 @@
 	height: 100vh;
 	width: 100vw;
 	display: flex;
+	overflow: hidden;
 
 	.leftSection {
 		flex: 1;
-		background-color: var(--c1);
+		background: linear-gradient(135deg, #1a1a1a 0%, #2d2416 50%, #3d2f1a 100%);
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background-image: url("https://firebasestorage.googleapis.com/v0/b/hansrajventures-b8dea.appspot.com/o/Used_Images%2FBannerFreeconsultLoginBg%2FloginBackground.png?alt=media&token=700acb2f-1ff7-4075-ab0c-f77b62d1afbd");
-		background-size: cover;
-		background-position: center;
-		mix-blend-mode: screen;
-		background-blend-mode: luminosity;
+		padding: 4rem;
+		position: relative;
+		overflow: hidden;
 
-		.iconContainer {
-			width: 31.67vw;
-			height: 62.78vh;
-			border-radius: 3.37vw;
-			border: 1.406px solid rgba(255, 255, 255, 0.52);
-			background: rgba(255, 255, 255, 0.21);
-			backdrop-filter: blur(9.557833671569824px);
+		// Glow orbs
+		.glow-orb {
+			position: absolute;
+			border-radius: 50%;
+			filter: blur(80px);
+			opacity: 0.3;
+			pointer-events: none;
+		}
+
+		.orb-1 {
+			width: 320px;
+			height: 320px;
+			background: #ff8c00;
+			top: 40px;
+			left: -80px;
+		}
+
+		.orb-2 {
+			width: 384px;
+			height: 384px;
+			background: #ffb347;
+			bottom: 80px;
+			right: 40px;
+		}
+
+		.orb-3 {
+			width: 256px;
+			height: 256px;
+			background: #ff6b35;
+			top: 50%;
+			left: 33%;
+			transform: translateY(-50%);
+		}
+
+		.orb-4 {
+			width: 288px;
+			height: 288px;
+			background: #ff9f66;
+			top: -40px;
+			right: 25%;
+		}
+
+		.contentWrapper {
+			position: relative;
+			z-index: 10;
+			max-width: 512px;
+			text-align: center;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			justify-content: center;
-			gap: 2rem;
+			gap: 2.5rem;
 
-			.logo {
-				width: 100%;
-				height: 24.47vh;
-				border-radius: 1.28vw;
+			.logoContainer {
+				display: flex;
+				justify-content: center;
+				margin-bottom: 1rem;
 
 				img {
-					height: 100%;
-					width: 100%;
+					height: 80px;
 					object-fit: contain;
-					border-radius: 1.28vw;
 				}
 			}
 
-			h3 {
-				width: 28.02vw;
-				color: var(--c2);
-				text-align: center;
-				font-family: Public Sans;
-				font-size: 2.74vw;
-				font-style: normal;
-				font-weight: 500;
-				line-height: 100%; /* 57.621px */
+			.welcomeTitle {
+				font-size: 3rem;
+				font-weight: 700;
+				font-family: "Public Sans", "Inter", sans-serif;
+				color: #ffffff;
+				margin: 0;
+				letter-spacing: -0.5px;
+				line-height: 1.2;
+				text-transform: uppercase;
+
+				.brandName {
+					display: block;
+					margin-top: 0.25rem;
+					background: linear-gradient(90deg, #ff8c00 0%, #ffb347 50%, #ff9f66 100%);
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+					background-clip: text;
+				}
+			}
+
+			.tagline {
+				font-size: 1.125rem;
+				font-weight: 700;
+				color: rgba(255, 255, 255, 0.6);
+				letter-spacing: 0.2em;
+				line-height: 1.6;
+				text-transform: uppercase;
+				margin: 0;
+			}
+
+			.features {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 0.75rem;
+				margin-top: 1rem;
+
+				.featureTag {
+					padding: 0.5rem 1rem;
+					border-radius: 9999px;
+					font-size: 0.875rem;
+					font-weight: 500;
+					background: rgba(255, 255, 255, 0.1);
+					color: rgba(255, 255, 255, 0.8);
+					backdrop-filter: blur(4px);
+					border: 1px solid rgba(255, 255, 255, 0.1);
+					transition: all 0.3s ease;
+
+					&:hover {
+						background: rgba(255, 140, 0, 0.15);
+						border-color: rgba(255, 140, 0, 0.3);
+						transform: translateY(-2px);
+					}
+				}
 			}
 		}
 	}
 
 	.rightSection {
 		flex: 1;
-		background: #fff;
+		background: #f5f5f5;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		padding: 2rem;
 
 		.formCon {
-			display: inline-flex;
-			height: 53.98vh;
-			padding: 2.81vw 2.81vw 3.49vw 2.81vw;
+			width: 100%;
+			max-width: 500px;
+			background: transparent;
+			border-radius: 0;
+			padding: 0;
+			box-shadow: none;
+			display: flex;
 			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			// gap: 1.46vw;
-			gap: 2.59vh;
-			flex-shrink: 0;
-			border-radius: 1.56vw;
-			background: #fff;
-			.inputs {
-				display: flex;
-				height: 20.37vh;
-				flex-direction: column;
-				align-items: flex-start;
-				gap: 1.99vh;
-				flex-shrink: 0;
+			gap: 2.5rem;
 
-				.inp1 {
-					display: flex;
-					flex-direction: column;
-					align-items: flex-start;
-					gap: 0.75vh;
-					label {
-						color: #191b1c;
-						font-family: Public Sans;
-						font-size: 0.98vw;
-						font-style: normal;
-						font-weight: 400;
-						line-height: 2.5vh; /* 142.857% */
-					}
-					input {
-						display: flex;
-						width: 29.73vw;
-						padding: 0.7vw;
-						align-items: center;
-						border-radius: 0.28vw;
-						border: 0.07vw solid #e5e7e8;
-						background: #fff;
-						outline: none;
-					}
+			h1 {
+				color: #191b1c;
+				text-align: left;
+				font-family: "Inter", sans-serif;
+				font-size: 2rem;
+				font-weight: 700;
+				margin: 0;
+				position: relative;
+				padding-left: 0;
 
-					::placeholder {
-						color: #959fa3;
-						font-family: Public Sans;
-						font-size: 0.98vw;
-						font-style: normal;
-						font-weight: 400;
-						line-height: 2.5vh; /* 142.857% */
-					}
+				&::before {
+					content: " ADMIN PORTAL";
+					display: block;
+					font-size: 0.75rem;
+					font-weight: 600;
+					color: #ff8c00;
+					letter-spacing: 1px;
+					margin-bottom: 1.5rem;
 				}
 
-				.inp2 {
+				&::after {
+					content: "Enter your credentials to access the dashboard";
+					display: block;
+					font-size: 0.95rem;
+					font-weight: 400;
+					color: #6b7280;
+					margin-top: 0.5rem;
+				}
+			}
+
+			form {
+				display: flex;
+				flex-direction: column;
+				gap: 1.5rem;
+
+				.inputs {
 					display: flex;
 					flex-direction: column;
-					align-items: flex-start;
-					gap: 0.75vh;
-					.inputCon {
-						display: flex;
-						align-items: center;
-						justify-content: space-between;
-						width: 29.73vw;
-						border: 0.07vw solid #e5e7e8;
-						border-radius: 0.28vw;
-						input {
-							display: flex;
-							width: 26.73vw;
-							border: none;
-							background: #fff;
-							padding: 0.7vw;
-							outline: none;
-						}
-						::placeholder {
-							color: #959fa3;
-							font-family: Public Sans;
-							font-size: 0.98vw;
-							font-style: normal;
-							font-weight: 400;
-							line-height: 2.5vh; /* 142.857% */
-						}
-						.eye {
-							width: 32.341px;
-							height: 32.341px;
-							padding-right: 0.4rem;
-							cursor: pointer;
+					gap: 1.5rem;
 
-							img {
-								height: 100%;
-								width: 100%;
+					.inp1 {
+						display: flex;
+						flex-direction: column;
+						gap: 0.5rem;
+
+						label {
+							color: #191b1c;
+							font-family: "Public Sans", sans-serif;
+							font-size: 0.9rem;
+							font-weight: 600;
+						}
+
+						input {
+							width: 100%;
+							padding: 0.9rem 1rem;
+							border: 1px solid #e5e7e8;
+							border-radius: 8px;
+							font-size: 0.95rem;
+							font-family: "Public Sans", sans-serif;
+							outline: none;
+							background: #ffffff;
+							transition: all 0.2s ease;
+
+							&::placeholder {
+								color: #9ca3af;
+							}
+
+							&:focus {
+								border-color: #cbd5e1;
+								box-shadow: none;
 							}
 						}
 					}
 
-					.passwordCon {
-						width: 100%;
+					.inp2 {
 						display: flex;
-						align-items: center;
-						justify-content: space-between;
+						flex-direction: column;
+						gap: 0.5rem;
 
-						label {
-							color: #191b1c;
-							font-family: Public Sans;
-							font-size: 0.98vw;
-							font-style: normal;
-							font-weight: 400;
-							line-height: 2.5vh; /* 142.857% */
+						.passwordCon {
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+
+							label {
+								color: #191b1c;
+								font-family: "Public Sans", sans-serif;
+								font-size: 0.9rem;
+								font-weight: 600;
+							}
+
+							.forgot {
+								color: #ff8c00;
+								font-family: "Public Sans", sans-serif;
+								font-size: 0.9rem;
+								font-weight: 500;
+								cursor: pointer;
+								transition: color 0.2s ease;
+
+								&:hover {
+									color: #e67e00;
+									text-decoration: underline;
+								}
+							}
 						}
-						.forgot {
-							color: var(--c1);
-							font-family: Public Sans;
-							font-size: 0.98vw;
-							font-style: normal;
-							font-weight: 400;
-							line-height: 2.68vh; /* 142.857% */
-							cursor: pointer;
+
+						.inputCon {
+							position: relative;
+							display: flex;
+							align-items: center;
+							width: 100%;
+
+							input {
+								width: 100%;
+								padding: 0.9rem 1rem;
+								padding-right: 3.5rem;
+								border: 1px solid #e5e7e8;
+								border-radius: 8px;
+								font-size: 0.95rem;
+								font-family: "Public Sans", sans-serif;
+								outline: none;
+								background: #ffffff;
+								transition: all 0.2s ease;
+
+								&::placeholder {
+									color: #9ca3af;
+								}
+
+								&:focus {
+									border-color: #cbd5e1;
+									box-shadow: none;
+								}
+							}
+
+							.eye {
+								position: absolute;
+								right: 1rem;
+								cursor: pointer;
+								padding: 0.25rem;
+								display: flex;
+								align-items: center;
+								justify-content: center;
+								transition: opacity 0.2s ease;
+
+								&:hover {
+									opacity: 0.7;
+								}
+
+								img {
+									width: 22px;
+									height: 22px;
+									opacity: 0.5;
+								}
+							}
 						}
 					}
 				}
-			}
 
-			h2 {
-				width: 23.09vw;
-				color: #191b1c;
-				text-align: center;
-				font-family: Inter;
-				font-size: 2.08vw;
-				font-style: normal;
-				font-weight: 600;
-				line-height: 6.18vh; /* 166.603% */
-			}
-
-			button {
-				display: flex;
-				width: 100%;
-				height: 6.2vh;
-				padding: 0px 1.68vw;
-				justify-content: center;
-				align-items: center;
-				border-radius: 11.22vw;
-				background: var(--lg1);
-				border: none;
-				cursor: pointer;
-				color: var(--c2);
-				font-size: 1.8rem;
-				transition: all 0.3s ease-in-out;
-				z-index: 1;
-				overflow: hidden;
-				position: relative;
-
-				&::after {
-					content: "";
-					position: absolute;
-					top: 0;
-					left: 0;
-					z-index: -1;
+				button {
 					width: 100%;
-					height: 100%;
-					background: var(--lg1v2);
-					opacity: 0;
-					transition: all 0.3s ease-in-out;
-				}
-
-				&:hover {
-					scale: 1.05;
+					padding: 1rem 1.5rem;
+					background: linear-gradient(90deg, #ff8c00 0%, #ff6b00 100%);
+					color: #ffffff;
+					font-size: 1rem;
+					font-weight: 600;
+					font-family: "Public Sans", sans-serif;
+					border: none;
+					border-radius: 8px;
+					cursor: pointer;
+					transition: all 0.3s ease;
+					box-shadow: none;
+					margin-top: 1rem;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					gap: 0.5rem;
 
 					&::after {
-						opacity: 1;
+						content: "→";
+						font-size: 1.2rem;
 					}
-				}
 
-				&:disabled {
-					cursor: default;
-					background: #959fa3;
+					&:hover:not(:disabled) {
+						background: linear-gradient(90deg, #ff9500 0%, #ff7300 100%);
+						transform: translateY(-1px);
+						box-shadow: 0 4px 12px rgba(255, 140, 0, 0.25);
+					}
 
-					&:hover {
-						scale: 1;
+					&:active:not(:disabled) {
+						transform: translateY(0);
+					}
+
+					&:disabled {
+						background: #9ca3af;
+						cursor: not-allowed;
+						box-shadow: none;
 
 						&::after {
-							opacity: 0;
+							content: "";
 						}
+					}
+				}
+			}
+
+			&::after {
+				content: "© 2026 ACROSSTEK™. ALL RIGHTS RESERVED.";
+				display: block;
+				text-align: center;
+				color: #9ca3af;
+				font-size: 0.75rem;
+				font-weight: 500;
+				letter-spacing: 0.5px;
+				margin-top: 2rem;
+			}
+		}
+	}
+
+	// Responsive Design
+	@media (max-width: 1024px) {
+		flex-direction: column;
+
+		.leftSection {
+			min-height: 40vh;
+			padding: 2rem;
+
+			.orb-1,
+			.orb-2,
+			.orb-3,
+			.orb-4 {
+				display: none;
+			}
+
+			.contentWrapper {
+				gap: 1.5rem;
+
+				.logoContainer img {
+					height: 80px;
+				}
+
+				.welcomeTitle {
+					font-size: 2rem;
+				}
+
+				.tagline {
+					font-size: 0.875rem;
+				}
+
+				.features {
+					gap: 0.5rem;
+
+					.featureTag {
+						padding: 0.4rem 0.875rem;
+						font-size: 0.8rem;
+					}
+				}
+			}
+		}
+
+		.rightSection {
+			min-height: 60vh;
+			padding: 1.5rem;
+
+			.formCon {
+				h1 {
+					font-size: 1.75rem;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 640px) {
+		.leftSection {
+			.contentWrapper {
+				.logoContainer img {
+					height: 60px;
+				}
+
+				.welcomeTitle {
+					font-size: 1.5rem;
+				}
+
+				.tagline {
+					font-size: 0.75rem;
+					letter-spacing: 0.15em;
+				}
+			}
+		}
+
+		.rightSection {
+			.formCon {
+				h1 {
+					font-size: 1.5rem;
+
+					&::before {
+						font-size: 0.7rem;
+					}
+
+					&::after {
+						font-size: 0.875rem;
 					}
 				}
 			}

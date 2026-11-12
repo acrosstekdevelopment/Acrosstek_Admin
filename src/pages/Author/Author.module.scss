@@ -1,0 +1,412 @@
+.AdmissionForms {
+	height: calc(100vh - 4.5rem);
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	overflow: hidden;
+
+	h1 {
+		padding: 2vh 0;
+		align-self: start;
+		margin-left: 2.3vw;
+		color: #191b1c;
+		font-family: var(--f1);
+		font-size: 1.25vw;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 2.13vh; /* 95.833% */
+	}
+	h4 {
+		padding-bottom: 1vh;
+		align-self: start;
+		margin-left: 2.3vw;
+		color: #999;
+		font-family: var(--f1);
+		font-size: 0.63vw;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 1.85vh; /* 166.667% */
+	}
+
+	.paymentHistory {
+		width: 100%;
+		flex: 1;
+		border-radius: 0.42vw 0.42vw 0px 0px;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+
+		.heading {
+			width: 100%;
+			display: flex;
+			padding: 1.11vh 1.25vw;
+			align-items: center;
+			justify-content: space-between;
+
+			.ButtonWrapper {
+				display: flex;
+				gap: 2rem;
+				align-items: center;
+
+				button {
+					cursor: pointer;
+					padding: 0.7vh 1.2vw;
+					background-color: var(--c1);
+					color: #fff;
+					border: none;
+					border-radius: 0.2vw;
+					transition: all ease 0.3s;
+					font-family: var(--f1);
+
+					&:hover {
+						background-color: var(--c1v2);
+						color: rgb(96, 102, 102);
+						transform: scale(1.1);
+					}
+
+					&.active {
+						background-color: var(--c1v2);
+						color: rgb(96, 102, 102);
+						transform: scale(1.1);
+					}
+
+					&.refresh {
+						background-color: var(--c4);
+						color: #fff;
+
+						&:hover {
+							background-color: var(--c4v2);
+							color: #fff;
+							transform: scale(1.1);
+						}
+					}
+				}
+			}
+
+			.AddDeveloper {
+				cursor: pointer;
+				padding: 0.7rem 1.4rem;
+				background-color: var(--c1);
+				color: var(--c2);
+				border: none;
+				border-radius: 0.2vw;
+				transition: all ease 0.3s;
+				font-family: var(--f1);
+
+				&:hover {
+					background-color: var(--c1v2);
+					color: var(--c1v2);
+					transform: scale(1.1);
+					color: var(--c3);
+				}
+			}
+		}
+
+		.subHeading {
+			width: 100%;
+			height: 3.3rem;
+			flex-shrink: 0;
+			opacity: 0.9;
+			background: var(--c1);
+			display: flex;
+			align-items: center;
+			padding: 0 1rem;
+
+			.userId {
+				flex: 0.4;
+			}
+			.Title {
+				flex: 1;
+			}
+			.Description {
+				flex: 1;
+			}
+			.Actions {
+				flex: 0.5;
+			}
+
+			.userId,
+			.Title,
+			.Description,
+			.Actions {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: var(--c2);
+				font-family: var(--f2);
+				font-size: 1.1rem;
+				font-style: normal;
+				font-weight: 500;
+				text-transform: uppercase;
+			}
+		}
+
+		.supportCards {
+			flex: 1;
+			padding: 1rem 1rem 1rem 1rem;
+			overflow-y: scroll;
+		}
+
+		.pagination {
+			display: flex;
+			width: 100%;
+			height: 8.1481vh;
+			padding: 24px;
+			justify-content: space-between;
+			align-items: center;
+			border-radius: 0px 0px 0.42vw 0.42vw;
+			background: #fff;
+
+			.pageButtons {
+				display: flex;
+
+				.leftArrow,
+				.rightArrow {
+					width: 2.08vw;
+					aspect-ratio: 1/1;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					border: none;
+					background: transparent;
+					cursor: pointer;
+
+					img {
+						height: 100%;
+						width: 100%;
+					}
+				}
+				.pages {
+					display: flex;
+					padding: 0 1vw;
+					gap: 0.5vw;
+					.buttons {
+						width: 2.08vw;
+						aspect-ratio: 1/1;
+						border-radius: 50%;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						// padding: 10px 0px;
+						color: #626c70;
+						text-align: center;
+						font-family: Public Sans;
+						font-size: 0.73vw;
+						font-style: normal;
+						font-weight: 600;
+						line-height: 1.85vh; /* 142.857% */
+					}
+					.active {
+						background-color: var(--c1);
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+
+	.spopup {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		right: 0;
+		background-color: transparent;
+	}
+}
+
+.ApplicationCard {
+	width: 100%;
+	min-height: 6rem;
+	display: flex;
+	align-items: center;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	margin-bottom: 1rem;
+	border-radius: 1rem;
+	box-shadow: 0 0 5px 3px var(--c1v2);
+
+	& > div {
+		width: 100%;
+		height: 100%;
+		// overflow: hidden;
+		padding: 0.5rem 2rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		flex-shrink: 0;
+	}
+
+	.userId {
+		flex: 0.4;
+	}
+
+	.Title {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		padding-left: 4rem;
+
+		img {
+			width: 4.5rem;
+			height: 4.5rem;
+			border-radius: 50%;
+		}
+	}
+	.Description {
+		flex: 1;
+		// min-height: 26rem;
+		p {
+			width: 90%;
+			white-space: pre-line;
+		}
+	}
+	.Skills {
+		flex: 1;
+		p {
+			width: 90%;
+			white-space: wrap;
+		}
+	}
+	.Actions {
+		flex: 0.5;
+		gap: 1rem;
+
+		p {
+			cursor: pointer;
+			font-size: 1.5rem;
+			transition: all 0.3s ease-in-out;
+
+			&:hover {
+				color: var(--c1);
+			}
+		}
+	}
+
+	p {
+		color: var(--c5);
+		font-family: var(--f3);
+		font-size: 1rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 1.85vh; /* 142.857% */
+		white-space: nowrap;
+	}
+}
+
+.AddJobPopup {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.3);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 5;
+
+	.WrapperContainer {
+		width: 50%;
+		max-height: 90%;
+		background: var(--c4);
+		padding: 2rem 3rem;
+		border-radius: 1rem;
+		overflow-y: scroll;
+		backdrop-filter: blur(5px);
+
+		h2 {
+			color: var(--c2);
+			font-size: 2rem;
+			margin-bottom: 2rem;
+		}
+
+		.Row {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+		}
+
+		.InputWrapper {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			gap: 0.2rem;
+			margin-bottom: 1.5rem;
+
+			& > div {
+				background: transparent !important;
+				border: none;
+				padding: 0;
+				outline: none;
+
+				&:focus-within {
+					outline: 1px solid transparent;
+				}
+			}
+
+			label {
+				color: var(--c2);
+				font-size: 1rem;
+			}
+
+			input {
+				width: 100%;
+				background: transparent;
+				border: none;
+				border-bottom: 2px solid var(--c2);
+				font-size: 1.2rem;
+				outline: none;
+				color: var(--c2);
+				transition: all 0.3s ease-in-out;
+
+				&:focus {
+					border-bottom: 2px solid var(--c1);
+				}
+			}
+
+			em {
+				color: var(--c1);
+			}
+
+			textarea {
+				height: 8rem;
+				resize: none;
+				background: transparent;
+				border: none;
+				border-bottom: 2px solid var(--c2);
+				font-size: 1.2rem;
+				outline: none;
+				color: var(--c2);
+				transition: all 0.3s ease-in-out;
+
+				&:focus {
+					border-bottom: 2px solid var(--c1);
+				}
+			}
+		}
+
+		.Submit {
+			width: 100%;
+			height: 3.5rem;
+			background: var(--c1);
+			transition: all 0.3s ease-in-out;
+			color: var(--c2);
+			border: none;
+			cursor: pointer;
+			font-size: 1.5rem;
+			border-radius: 0.5rem;
+
+			&:hover {
+				// background: var(--c1v2);
+				color: var(--c2);
+				scale: 1.03;
+			}
+		}
+	}
+}

@@ -74,16 +74,32 @@ input[type="number"] {
 	--c1: #ff621f;
 	--c1v2: #ff621f42;
 	--c2: #fff;
+	--c2h: #5e7af5;
 	--c3: #000;
 	--c4: #3b3c4a;
 	--c4v2: rgba(32, 34, 53, 0.87);
 	--c5: #191b1c;
 
+	--c1h2: #a0aec0;
+	--c1h4: #838798;
+
+	--c10:#ccc;
+	--c11:#ddd;
+	--c12:#f0f0f0;
+	--c13:#999;
+
 	--b1: rgba(37, 46, 54, 0.5);
 	--b2: rgba(255, 255, 255, 0.06);
+	--b3: rgb(96, 102, 102);
+	--b4:rgb(12, 13, 14);
+
+	--bg8: #0b1233d6;
 
 	--lg1: linear-gradient(112deg, var(--c1) 4.93%, #fff 256.79%);
 	--lg1v2: linear-gradient(226deg, var(--c1) 4.93%, #fff 256.79%);
+
+
+	--rgb1:rgba(255, 98, 31, 1);
 
 	--Base_Font_Size: 100%;
 	font-size: var(--Base_Font_Size);
@@ -92,7 +108,7 @@ input[type="number"] {
 .quill {
 	// height: 100% !important;
 	// overflow: hidden;
-	
+
 	.ql-container {
 	}
 }

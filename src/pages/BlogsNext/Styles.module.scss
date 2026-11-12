@@ -1,0 +1,256 @@
+.AdmissionForms {
+	height: calc(100vh - 4.5rem);
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	overflow: hidden;
+
+	h1 {
+		padding: 2vh 0;
+		align-self: start;
+		margin-left: 2.3vw;
+		color: #191b1c;
+		font-family: var(--f1);
+		font-size: 1.25vw;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 2.13vh; /* 95.833% */
+	}
+	h4 {
+		padding-bottom: 1vh;
+		align-self: start;
+		margin-left: 2.3vw;
+		color: #999;
+		font-family: var(--f1);
+		font-size: 0.63vw;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 1.85vh; /* 166.667% */
+	}
+
+	.paymentHistory {
+		width: 100%;
+		// height: 70.65vh;
+		flex: 1;
+		border-radius: 0.42vw 0.42vw 0px 0px;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+
+		.heading {
+			width: 100%;
+			display: flex;
+			padding: 1.11vh 1.25vw;
+			align-items: center;
+			justify-content: space-between;
+
+			.ButtonWrapper {
+				display: flex;
+				gap: 2rem;
+				align-items: center;
+
+				button {
+					cursor: pointer;
+					padding: 0.7vh 1.2vw;
+					background-color: var(--c1);
+					color: #fff;
+					border: none;
+					border-radius: 0.2vw;
+					transition: all ease 0.3s;
+					font-family: var(--f1);
+
+					&:hover {
+						background-color: var(--c1v2);
+						color: rgb(96, 102, 102);
+						transform: scale(1.1);
+					}
+
+					&.active {
+						background-color: var(--c1v2);
+						color: rgb(96, 102, 102);
+						transform: scale(1.1);
+					}
+
+					&.refresh {
+						background-color: var(--c4);
+						color: #fff;
+
+						&:hover {
+							background-color: var(--c4v2);
+							color: #fff;
+							transform: scale(1.1);
+						}
+					}
+				}
+			}
+
+			.AddDeveloper {
+				cursor: pointer;
+				padding: 0.7rem 1.4rem;
+				background-color: var(--c1);
+				color: #fff;
+				border: none;
+				border-radius: 0.2vw;
+				transition: all ease 0.3s;
+				font-family: var(--f1);
+
+				&:hover {
+					background-color: var(--c1v2);
+					color: var(--c1v2);
+					transform: scale(1.1);
+					color: var(--c3);
+				}
+			}
+		}
+
+		.supportCards {
+			flex: 1;
+			padding: 1rem 1rem 1rem 1rem;
+			overflow-y: scroll;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			justify-content: center;
+			gap: 2rem;
+		}
+
+		.pagination {
+			display: flex;
+			width: 100%;
+			height: 8.1481vh;
+			padding: 24px;
+			justify-content: space-between;
+			align-items: center;
+			border-radius: 0px 0px 0.42vw 0.42vw;
+			background: #fff;
+
+			.pageButtons {
+				display: flex;
+
+				.leftArrow,
+				.rightArrow {
+					width: 2.08vw;
+					aspect-ratio: 1/1;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					border: none;
+					background: transparent;
+					cursor: pointer;
+
+					img {
+						height: 100%;
+						width: 100%;
+					}
+				}
+				.pages {
+					display: flex;
+					padding: 0 1vw;
+					gap: 0.5vw;
+					.buttons {
+						width: 2.08vw;
+						aspect-ratio: 1/1;
+						border-radius: 50%;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						// padding: 10px 0px;
+						color: #626c70;
+						text-align: center;
+						font-family: Public Sans;
+						font-size: 0.73vw;
+						font-style: normal;
+						font-weight: 600;
+						line-height: 1.85vh; /* 142.857% */
+					}
+					.active {
+						background-color: var(--c1);
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+}
+
+.ApplicationCardOuter {
+	width: 100%;
+	height: 20rem;
+	display: flex;
+	align-items: center;
+	position: relative;
+
+	&:nth-child(odd) {
+		justify-content: flex-end;
+	}
+	&:nth-child(even) {
+		justify-content: flex-start;
+	}
+
+	.BlogTime {
+		display: none;
+		position: absolute;
+		bottom: 1rem;
+		right: 2rem;
+		background-color: var(--c2);
+		padding: 1.2rem;
+		border-radius: 1rem;
+		color: var(--c4);
+		font-family: Public Sans;
+		font-size: 0.973vw;
+		font-style: normal;
+		font-weight: 600;
+
+		&.ShowBlogTime {
+			display: block;
+		}
+	}
+
+	.ApplicationCard {
+		width: 45rem;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+
+		border-radius: 1rem;
+		padding: 1rem;
+		position: relative;
+
+		img {
+			width: 20rem;
+			height: 20rem;
+			object-fit: contain;
+		}
+
+		h2 {
+			font-size: 1.8rem;
+		}
+
+		p {
+			width: 2.5rem;
+			height: 2.5rem;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: var(--c2);
+			cursor: pointer;
+			font-size: 1.2rem;
+			transition: all 0.3s ease-in-out;
+			position: absolute;
+			top: 1rem;
+			right: 1rem;
+			cursor: pointer;
+
+			&.Edit {
+				right: 4rem;
+			}
+
+			&:hover {
+				color: var(--c1);
+			}
+		}
+	}
+}
